@@ -33,7 +33,23 @@ module top (
     output [7:0] AN
 );
 
-  assign AN = 8'b01111111;
-  assign CA = 1'b0;
-  assign DP = 1'b0;
+  reg [31:0] data = 32'h89abcdef;
+  wire en;
+
+  assign en = 1'b1;
+
+  led u_led (
+      .clk (CLK100MHZ),
+      .en  (en),
+      .data(data),
+      .CA  (CA),
+      .CB  (CB),
+      .CC  (CC),
+      .CD  (CD),
+      .CE  (CE),
+      .CF  (CF),
+      .CG  (CG),
+      .DP  (DP),
+      .AN  (AN)
+  );
 endmodule

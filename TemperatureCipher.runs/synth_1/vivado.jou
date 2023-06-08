@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Tue Jun  6 15:55:50 2023
-# Process ID: 418422
+# Start of session at: Thu Jun  8 21:21:08 2023
+# Process ID: 80111
 # Current directory: /home/xjh/fpga/TemperatureCipher/TemperatureCipher.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: /home/xjh/fpga/TemperatureCipher/TemperatureCipher.runs/synth_1/top.vds
 # Journal file: /home/xjh/fpga/TemperatureCipher/TemperatureCipher.runs/synth_1/vivado.jou
-# Running On: xjh-linux-pc, OS: Linux, CPU Frequency: 5100.680 MHz, CPU Physical cores: 14, Host memory: 67162 MB
+# Running On: xjh-linux-pc, OS: Linux, CPU Frequency: 5099.706 MHz, CPU Physical cores: 14, Host memory: 67162 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

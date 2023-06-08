@@ -70,8 +70,10 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 5
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-44452-xjh-linux-pc/incrSyn
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -87,7 +89,10 @@ set_property ip_output_repo /home/xjh/fpga/TemperatureCipher/TemperatureCipher.c
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v
+read_verilog -library xil_defaultlib {
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/led.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
