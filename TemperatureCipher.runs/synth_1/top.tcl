@@ -70,8 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param xicom.use_bs_reader 1
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-44452-xjh-linux-pc/incrSyn
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-166132-xjh-linux-pc/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -90,7 +91,17 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/IVLBC.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/SubNibble.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/i_loop.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/keyex.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/led.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/matrix.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/p_uart_recv.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/p_uart_send.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/sbox.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v
 }
 OPTRACE "Adding files" END { }

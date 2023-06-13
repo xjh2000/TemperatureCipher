@@ -22,6 +22,8 @@
 
 module top (
     input CLK100MHZ,
+    input UART_TXD_IN,
+    output UART_RXD_OUT,
     output CA,
     output CB,
     output CC,
@@ -32,13 +34,15 @@ module top (
     output DP,
     output [7:0] AN
 );
+  parameter CLK_FREQUENCY = 100_000_000;
 
-  reg [31:0] data = 32'h89abcdef;
-  wire en;
-
+  reg  [31:0] data = 32'h12345678;
+  wire        en;
   assign en = 1'b1;
 
-  led u_led (
+  led #(
+      .CLK_FREQUENCY(CLK_FREQUENCY)
+  ) u_led (
       .clk (CLK100MHZ),
       .en  (en),
       .data(data),
@@ -52,4 +56,5 @@ module top (
       .DP  (DP),
       .AN  (AN)
   );
+
 endmodule
