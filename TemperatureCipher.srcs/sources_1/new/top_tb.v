@@ -25,8 +25,8 @@ module top_tb;
       .CLK_FREQUENCY(2000)
   ) top_instan (
       .CLK100MHZ(clk),
-      .UART_RXD_OUT(UART_RXD_OUT),
       .UART_TXD_IN(UART_TXD_IN),
+      .UART_RXD_OUT(UART_RXD_OUT),
       .CA(CA),
       .CB(CB),
       .CC(CC),
