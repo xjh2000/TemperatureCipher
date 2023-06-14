@@ -22,6 +22,7 @@
 
 module top (
     input CLK100MHZ,
+    input CPU_RESETN,
     input UART_TXD_IN,
     output UART_RXD_OUT,
     output CA,
@@ -42,7 +43,7 @@ module top (
 
   led #(
       .CLK_FREQUENCY(CLK_FREQUENCY)
-  ) u_led (
+  ) led_inst (
       .clk (CLK100MHZ),
       .en  (en),
       .data(data),
@@ -57,4 +58,14 @@ module top (
       .AN  (AN)
   );
 
-endmodule
+  uart_recv #(
+      .CLK_FREQ(1000),
+      .UART_BPS(1000)
+  ) uart_recv_inst (
+      .sys_clk  (CLK100MHZ),
+      .sys_rst_n(CPU_RESETN),
+      .uart_rxd (UART_TXD_IN),
+      .rx_flag  (UART_RXD_OUT)
+  );
+
+endmodule  //top

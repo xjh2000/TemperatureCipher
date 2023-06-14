@@ -25,8 +25,8 @@ module top_tb;
       .CLK_FREQUENCY(2000)
   ) top_instan (
       .CLK100MHZ(clk),
-      .UART_TXD_IN(UART_TXD_IN),
       .UART_RXD_OUT(UART_RXD_OUT),
+      .UART_TXD_IN(UART_TXD_IN),
       .CA(CA),
       .CB(CB),
       .CC(CC),
@@ -37,5 +37,43 @@ module top_tb;
       .DP(DP),
       .AN(AN)
   );
+
+  uart_recv #(
+      .CLK_FREQ(1000),
+      .UART_BPS(1000)
+  ) uart_recv_instan (
+      .sys_clk(clk),
+      .uart_rxd(UART_TXD_IN),
+      .uart_done(uart_done),
+      .rx_flag(rx_flag),
+      .rx_cnt(rx_cnt),
+      .rxdata(rxdata),
+      .uart_data(uart_data)
+  );
+
+  initial begin
+
+    #1 UART_TXD_IN = 1'b0;  // start bit
+    #1 UART_TXD_IN = 1'b1;
+    #1 UART_TXD_IN = 1'b0;
+    #1 UART_TXD_IN = 1'b1;
+    #1 UART_TXD_IN = 1'b0;
+    #1 UART_TXD_IN = 1'b1;
+    #1 UART_TXD_IN = 1'b0;
+    #1 UART_TXD_IN = 1'b1;
+    #1 UART_TXD_IN = 1'b0;
+    #1 UART_TXD_IN = 1'b1;  // end bit
+
+    #5 #1 UART_TXD_IN = 1'b0;  // start bit
+    #1 UART_TXD_IN = 1'b1;
+    #1 UART_TXD_IN = 1'b0;
+    #1 UART_TXD_IN = 1'b1;
+    #1 UART_TXD_IN = 1'b0;
+    #1 UART_TXD_IN = 1'b1;
+    #1 UART_TXD_IN = 1'b0;
+    #1 UART_TXD_IN = 1'b1;
+    #1 UART_TXD_IN = 1'b0;
+    #1 UART_TXD_IN = 1'b1;  // end bit
+  end
 
 endmodule  //top_tb
