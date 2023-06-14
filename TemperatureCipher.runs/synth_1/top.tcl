@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 5
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param synth.incrementalSynthesisCache ./.Xil/Vivado-218393-xjh-linux-pc/incrSyn
@@ -94,7 +95,11 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/led.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_loop.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send_b8.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v
 }
 OPTRACE "Adding files" END { }
