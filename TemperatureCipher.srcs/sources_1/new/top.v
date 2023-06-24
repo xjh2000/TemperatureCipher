@@ -49,10 +49,15 @@ module top (
   wire        uart_tx_busy;  // when send is busy
 
   wire [31:0] data;
-
   wire        en;
-
   assign en = 1'b1;
+
+  wire [63:0] desOut;
+  wire [63:0] desIn;
+  wire [55:0] key = 56'hffff_ffff_ffff_ff;
+
+  wire decrypt;
+  assign decrypt = 1'b0;
 
 
 
@@ -61,7 +66,7 @@ module top (
   ) led_inst (
       .clk (CLK100MHZ),
       .en  (en),
-      .data(data),
+      .data(desOut[31:0]),
       .CA  (CA),
       .CB  (CB),
       .CC  (CC),
@@ -74,11 +79,19 @@ module top (
   );
 
 
+  des des_inst (
+      .desOut(desOut),
+      .desIn (desIn),
+      .key   (key),
+      .decrypt(decrypt),
+      .clk   (CLK100MHZ)
+  );
+
   ds18b20_dri ds18b20_dri_inst (
       .clk      (CLK100MHZ),
       .rst_n    (CPU_RESETN),
       .dq       (JA),
-      .temp_data(data[19:0])
+      .temp_data(desIn[19:0])
   );
 
   // uart receive module

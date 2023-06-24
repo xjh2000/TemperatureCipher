@@ -115,6 +115,8 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -125,13 +127,31 @@ set rc [catch {
   set_param tcl.collectionResultDisplayLimit 0
   set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 5
+  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param runs.launchOptions { -jobs 20  }
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint /home/xjh/fpga/TemperatureCipher/TemperatureCipher.runs/impl_1/top.dcp
+OPTRACE "create in-memory project" START { }
+  create_project -in_memory -part xc7a100tcsg324-1
+  set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+OPTRACE "create in-memory project" END { }
+OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir /home/xjh/fpga/TemperatureCipher/TemperatureCipher.cache/wt [current_project]
   set_property parent.project_path /home/xjh/fpga/TemperatureCipher/TemperatureCipher.xpr [current_project]
   set_property ip_output_repo /home/xjh/fpga/TemperatureCipher/TemperatureCipher.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+OPTRACE "set parameters" END { }
+OPTRACE "add files" START { }
+  add_files -quiet /home/xjh/fpga/TemperatureCipher/TemperatureCipher.runs/synth_1/top.dcp
+OPTRACE "read constraints: implementation" START { }
+  read_xdc /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc
+OPTRACE "read constraints: implementation" END { }
+OPTRACE "add files" END { }
+OPTRACE "link_design" START { }
+  link_design -top top -part xc7a100tcsg324-1 
+OPTRACE "link_design" END { }
+OPTRACE "gray box cells" START { }
+OPTRACE "gray box cells" END { }
 OPTRACE "init_design_reports" START { REPORT }
 OPTRACE "init_design_reports" END { }
 OPTRACE "init_design_write_hwdef" START { }
