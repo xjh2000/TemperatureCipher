@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1686725619">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1687574667">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="top_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS" Name="top_routed.rqs"/>
@@ -14,7 +14,6 @@
   <File Type="CFI_FILE" Name="top.cfi"/>
   <File Type="RCFI_FILE" Name="top.rcfi"/>
   <File Type="PL-PDI-FILE" Name="top_pld.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="top_soc.pdi"/>
   <File Type="RDI-RDI" Name="top.vdi"/>
   <File Type="PDI-FILE" Name="top.pdi"/>
   <File Type="BITSTR-MMI" Name="top.mmi"/>
@@ -84,8 +83,17 @@
   <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
   <File Type="INIT-TIMING" Name="top_timing_summary_init.rpt"/>
   <File Type="PA-TCL" Name="top.tcl"/>
+  <File Type="BOOT-PDI-FILE" Name="top_soc.pdi"/>
+  <File Type="PA-DCP" Name="top.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/ds18b20_dri.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/led.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -135,6 +143,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/dht11_drive.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top"/>
@@ -152,6 +168,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

@@ -24,6 +24,7 @@ module top (
     input CLK100MHZ,
     input CPU_RESETN,
     input UART_TXD_IN,
+    inout JA,
     output UART_RXD_OUT,
     output CA,
     output CB,
@@ -47,16 +48,20 @@ module top (
   wire [63:0] uart_send_data;  // send data buff
   wire        uart_tx_busy;  // when send is busy
 
-  reg  [31:0] data = 32'h12345678;
+  wire [31:0] data;
+
   wire        en;
+
   assign en = 1'b1;
+
+
 
   led #(
       .CLK_FREQUENCY(CLK_FREQUENCY)
   ) led_inst (
       .clk (CLK100MHZ),
       .en  (en),
-      .data(uart_send_data[31:0]),
+      .data(data),
       .CA  (CA),
       .CB  (CB),
       .CC  (CC),
@@ -68,6 +73,13 @@ module top (
       .AN  (AN)
   );
 
+
+  ds18b20_dri ds18b20_dri_inst (
+      .clk      (CLK100MHZ),
+      .rst_n    (CPU_RESETN),
+      .dq       (JA),
+      .temp_data(data[19:0])
+  );
 
   // uart receive module
   uart_recv_b8 #(
