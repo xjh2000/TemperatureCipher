@@ -105,9 +105,6 @@ read_verilog -library xil_defaultlib {
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/sbox6.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/sbox7.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/sbox8.v
-  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_loop.v
-  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv.v
-  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send_b8.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v

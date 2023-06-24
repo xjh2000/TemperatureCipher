@@ -3,13 +3,13 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Jun 24 11:20:50 2023
-# Process ID: 102816
+# Start of session at: Sat Jun 24 12:53:29 2023
+# Process ID: 154140
 # Current directory: /home/xjh/fpga/TemperatureCipher/TemperatureCipher.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: /home/xjh/fpga/TemperatureCipher/TemperatureCipher.runs/synth_1/top.vds
 # Journal file: /home/xjh/fpga/TemperatureCipher/TemperatureCipher.runs/synth_1/vivado.jou
-# Running On: xjh-linux-pc, OS: Linux, CPU Frequency: 5100.000 MHz, CPU Physical cores: 14, Host memory: 67150 MB
+# Running On: xjh-linux-pc, OS: Linux, CPU Frequency: 5099.469 MHz, CPU Physical cores: 14, Host memory: 67150 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/utils_1/imports/synth_1/top.dcp
@@ -24,11 +24,10 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 102836
-INFO: [Synth 8-11241] undeclared symbol 'start_flag', assumed default net type 'wire' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v:26]
+INFO: [Synth 8-7075] Helper process launched with PID 154163
 INFO: [Synth 8-11241] undeclared symbol 'send_end', assumed default net type 'wire' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send_b8.v:33]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2845.895 ; gain = 378.770 ; free physical = 44621 ; free virtual = 56549
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2846.145 ; gain = 378.770 ; free physical = 44699 ; free virtual = 56770
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:23]
 INFO: [Synth 8-6157] synthesizing module 'led' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/led.v:22]
@@ -60,24 +59,8 @@ INFO: [Synth 8-6155] done synthesizing module 'crp' (0#1) [/home/xjh/fpga/Temper
 INFO: [Synth 8-6155] done synthesizing module 'des' (0#1) [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/des.v:35]
 INFO: [Synth 8-6157] synthesizing module 'ds18b20_dri' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/ds18b20_dri.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'ds18b20_dri' (0#1) [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/ds18b20_dri.v:1]
-WARNING: [Synth 8-7071] port 'sign' of module 'ds18b20_dri' is unconnected for instance 'ds18b20_dri_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:90]
-WARNING: [Synth 8-7023] instance 'ds18b20_dri_inst' of module 'ds18b20_dri' has 5 connections declared, but only 4 given [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:90]
-INFO: [Synth 8-6157] synthesizing module 'uart_recv_b8' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v:2]
-	Parameter CLK_FREQ bound to: 100000000 - type: integer 
-	Parameter UART_BPS bound to: 115200 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'uart_recv' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv.v:1]
-	Parameter CLK_FREQ bound to: 100000000 - type: integer 
-	Parameter UART_BPS bound to: 115200 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'uart_recv' (0#1) [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv.v:1]
-WARNING: [Synth 8-7071] port 'rx_flag' of module 'uart_recv' is unconnected for instance 'uart_recv_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v:94]
-WARNING: [Synth 8-7071] port 'rx_cnt' of module 'uart_recv' is unconnected for instance 'uart_recv_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v:94]
-WARNING: [Synth 8-7071] port 'rxdata' of module 'uart_recv' is unconnected for instance 'uart_recv_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v:94]
-WARNING: [Synth 8-7023] instance 'uart_recv_inst' of module 'uart_recv' has 8 connections declared, but only 5 given [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v:94]
-INFO: [Synth 8-6155] done synthesizing module 'uart_recv_b8' (0#1) [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v:2]
-WARNING: [Synth 8-7071] port 'rx_flag' of module 'uart_recv_b8' is unconnected for instance 'uart_recv_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:101]
-WARNING: [Synth 8-7071] port 'rx_cnt' of module 'uart_recv_b8' is unconnected for instance 'uart_recv_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:101]
-WARNING: [Synth 8-7071] port 'rxdata' of module 'uart_recv_b8' is unconnected for instance 'uart_recv_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:101]
-WARNING: [Synth 8-7023] instance 'uart_recv_b8_inst' of module 'uart_recv_b8' has 8 connections declared, but only 5 given [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:101]
+WARNING: [Synth 8-7071] port 'sign' of module 'ds18b20_dri' is unconnected for instance 'ds18b20_dri_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:114]
+WARNING: [Synth 8-7023] instance 'ds18b20_dri_inst' of module 'ds18b20_dri' has 5 connections declared, but only 4 given [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:114]
 INFO: [Synth 8-6157] synthesizing module 'uart_send_b8' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send_b8.v:1]
 	Parameter CLK_FREQ bound to: 100000000 - type: integer 
 	Parameter UART_BPS bound to: 115200 - type: integer 
@@ -91,32 +74,34 @@ WARNING: [Synth 8-7071] port 'tx_data' of module 'uart_send' is unconnected for 
 WARNING: [Synth 8-7071] port 'tx_cnt' of module 'uart_send' is unconnected for instance 'uart_send_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send_b8.v:115]
 WARNING: [Synth 8-7023] instance 'uart_send_inst' of module 'uart_send' has 10 connections declared, but only 6 given [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send_b8.v:115]
 INFO: [Synth 8-6155] done synthesizing module 'uart_send_b8' (0#1) [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send_b8.v:1]
-WARNING: [Synth 8-7071] port 'en_flag' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:114]
-WARNING: [Synth 8-7071] port 'tx_flag' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:114]
-WARNING: [Synth 8-7071] port 'tx_data' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:114]
-WARNING: [Synth 8-7071] port 'tx_cnt' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:114]
-WARNING: [Synth 8-7023] instance 'uart_send_b8_inst' of module 'uart_send_b8' has 10 connections declared, but only 6 given [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:114]
-INFO: [Synth 8-6157] synthesizing module 'uart_loop' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_loop.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'uart_loop' (0#1) [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_loop.v:1]
+WARNING: [Synth 8-7071] port 'en_flag' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:138]
+WARNING: [Synth 8-7071] port 'tx_flag' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:138]
+WARNING: [Synth 8-7071] port 'tx_data' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:138]
+WARNING: [Synth 8-7071] port 'tx_cnt' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:138]
+WARNING: [Synth 8-7023] instance 'uart_send_b8_inst' of module 'uart_send_b8' has 10 connections declared, but only 6 given [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:138]
 INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:23]
 WARNING: [Synth 8-6014] Unused sequential element L15_reg was removed.  [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/des.v:205]
 WARNING: [Synth 8-6014] Unused sequential element R15_reg was removed.  [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/des.v:209]
 WARNING: [Synth 8-7137] Register wr_data_reg in module ds18b20_dri has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/ds18b20_dri.v:202]
 WARNING: [Synth 8-7137] Register bit_width_reg in module ds18b20_dri has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/ds18b20_dri.v:253]
 WARNING: [Synth 8-7137] Register org_data_reg in module ds18b20_dri has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/ds18b20_dri.v:285]
+WARNING: [Synth 8-3848] Net UART_RXD_OUT in module/entity top does not have driver. [/home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v:29]
+WARNING: [Synth 8-7129] Port UART_RXD_OUT in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port JD[1] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UART_TXD_IN in module top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2937.832 ; gain = 470.707 ; free physical = 44504 ; free virtual = 56432
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2937.082 ; gain = 469.707 ; free physical = 44583 ; free virtual = 56656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2952.676 ; gain = 485.551 ; free physical = 44504 ; free virtual = 56432
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2951.926 ; gain = 484.551 ; free physical = 44583 ; free virtual = 56656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2952.676 ; gain = 485.551 ; free physical = 44504 ; free virtual = 56432
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2951.926 ; gain = 484.551 ; free physical = 44583 ; free virtual = 56656
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2952.676 ; gain = 0.000 ; free physical = 44504 ; free virtual = 56432
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2951.926 ; gain = 0.000 ; free physical = 44583 ; free virtual = 56656
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -127,81 +112,81 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3100.426 ; gain = 0.000 ; free physical = 44495 ; free virtual = 56424
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3098.676 ; gain = 0.000 ; free physical = 44574 ; free virtual = 56646
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3100.426 ; gain = 0.000 ; free physical = 44495 ; free virtual = 56424
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3098.676 ; gain = 0.000 ; free physical = 44574 ; free virtual = 56646
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44492 ; free virtual = 56422
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44572 ; free virtual = 56644
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44492 ; free virtual = 56422
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44572 ; free virtual = 56644
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44492 ; free virtual = 56422
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44572 ; free virtual = 56644
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44486 ; free virtual = 56416
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44570 ; free virtual = 56644
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   24 Bit       Adders := 1     
 	   2 Input   11 Bit       Adders := 1     
-	   2 Input   10 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 1     
 	   2 Input    6 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 7     
+	   2 Input    4 Bit       Adders := 5     
 +---XORs : 
 	   2 Input     48 Bit         XORs := 16    
 	   2 Input     32 Bit         XORs := 16    
 +---Registers : 
-	               64 Bit    Registers := 5     
+	               64 Bit    Registers := 2     
 	               56 Bit    Registers := 16    
-	               32 Bit    Registers := 30    
+	               32 Bit    Registers := 31    
 	               20 Bit    Registers := 1     
-	               16 Bit    Registers := 4     
+	               16 Bit    Registers := 3     
 	               11 Bit    Registers := 1     
-	                8 Bit    Registers := 6     
+	                8 Bit    Registers := 4     
 	                6 Bit    Registers := 2     
 	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 8     
+	                4 Bit    Registers := 6     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 35    
+	                1 Bit    Registers := 24    
 +---Muxes : 
-	   2 Input   64 Bit        Muxes := 1     
-	   8 Input   64 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 1     
 	   2 Input   11 Bit        Muxes := 1     
-	   2 Input   10 Bit        Muxes := 4     
+	   2 Input   10 Bit        Muxes := 2     
 	   7 Input    8 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 6     
+	   2 Input    4 Bit        Muxes := 4     
 	   7 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 9     
 	   6 Input    3 Bit        Muxes := 1     
 	   5 Input    3 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 3     
 	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 815   
+	   2 Input    1 Bit        Muxes := 808   
 	  18 Input    1 Bit        Muxes := 8     
 	   7 Input    1 Bit        Muxes := 13    
 	   4 Input    1 Bit        Muxes := 14    
 	   6 Input    1 Bit        Muxes := 6     
 	   8 Input    1 Bit        Muxes := 2     
-	   3 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 2     
 	  12 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -222,8 +207,11 @@ WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 DSP Report: Generating DSP ds18b20_dri_inst/data20, operation Mode is: A*(B:0x271).
 DSP Report: operator ds18b20_dri_inst/data20 is absorbed into DSP ds18b20_dri_inst/data20.
 WARNING: [Synth 8-3917] design top has port DP driven by constant 1
+WARNING: [Synth 8-7129] Port UART_RXD_OUT in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port JD[1] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UART_TXD_IN in module top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44467 ; free virtual = 56404
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44597 ; free virtual = 56636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -308,19 +296,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44553 ; free virtual = 56406
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44590 ; free virtual = 56630
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44550 ; free virtual = 56404
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44590 ; free virtual = 56630
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44470 ; free virtual = 56367
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44581 ; free virtual = 56620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -338,37 +326,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44475 ; free virtual = 56363
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44580 ; free virtual = 56620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44475 ; free virtual = 56363
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44580 ; free virtual = 56620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44474 ; free virtual = 56363
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44580 ; free virtual = 56620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44474 ; free virtual = 56363
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44580 ; free virtual = 56620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44482 ; free virtual = 56361
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44580 ; free virtual = 56620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44482 ; free virtual = 56361
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44580 ; free virtual = 56620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -393,49 +381,50 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     2|
-|2     |CARRY4  |    46|
+|2     |CARRY4  |    52|
 |3     |DSP48E1 |     1|
-|4     |LUT1    |    18|
-|5     |LUT2    |   546|
-|6     |LUT3    |    73|
-|7     |LUT4    |   105|
-|8     |LUT5    |   103|
-|9     |LUT6    |   569|
-|10    |MUXF7   |    10|
-|11    |FDCE    |   368|
+|4     |LUT1    |    17|
+|5     |LUT2    |   552|
+|6     |LUT3    |    77|
+|7     |LUT4    |    84|
+|8     |LUT5    |    92|
+|9     |LUT6    |   592|
+|10    |MUXF7   |    11|
+|11    |FDCE    |   155|
 |12    |FDPE    |     5|
-|13    |FDRE    |   988|
+|13    |FDRE    |  1036|
 |14    |FDSE    |     8|
-|15    |IBUF    |     3|
+|15    |IBUF    |     2|
 |16    |IOBUF   |     1|
 |17    |OBUF    |    17|
+|18    |OBUFT   |     1|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44482 ; free virtual = 56361
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44580 ; free virtual = 56620
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3100.426 ; gain = 485.551 ; free physical = 44485 ; free virtual = 56364
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3100.426 ; gain = 633.301 ; free physical = 44485 ; free virtual = 56364
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3098.676 ; gain = 484.551 ; free physical = 44580 ; free virtual = 56619
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3098.676 ; gain = 631.301 ; free physical = 44580 ; free virtual = 56619
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3100.426 ; gain = 0.000 ; free physical = 44773 ; free virtual = 56652
-INFO: [Netlist 29-17] Analyzing 58 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3098.676 ; gain = 0.000 ; free physical = 44861 ; free virtual = 56901
+INFO: [Netlist 29-17] Analyzing 65 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3100.426 ; gain = 0.000 ; free physical = 44771 ; free virtual = 56651
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3098.676 ; gain = 0.000 ; free physical = 44860 ; free virtual = 56901
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
 
-Synth Design complete | Checksum: c7acf6e2
+Synth Design complete | Checksum: 7afe111c
 INFO: [Common 17-83] Releasing license: Synthesis
-63 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
+56 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 3100.426 ; gain = 972.246 ; free physical = 44771 ; free virtual = 56651
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2627.125; main = 2313.161; forked = 376.409
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4074.785; main = 3100.430; forked = 1006.371
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 3098.676 ; gain = 971.309 ; free physical = 44860 ; free virtual = 56901
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2615.546; main = 2304.022; forked = 373.835
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4070.113; main = 3098.680; forked = 1003.449
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint '/home/xjh/fpga/TemperatureCipher/TemperatureCipher.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jun 24 11:21:13 2023...
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 24 12:53:51 2023...

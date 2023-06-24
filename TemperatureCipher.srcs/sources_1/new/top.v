@@ -25,6 +25,7 @@ module top (
     input CPU_RESETN,
     input UART_TXD_IN,
     inout JA,
+    inout [2:1] JD,
     output UART_RXD_OUT,
     output CA,
     output CB,
@@ -40,12 +41,21 @@ module top (
   // parameter define
   parameter CLK_FREQ = 100_000_000;  // sys clock frequency
   parameter UART_BPS = 115200;  // uart bound frequency
+  localparam MAX_COUNTER = CLK_FREQUENCY / 10;  // 100ms needs number of counter  
+
+  reg  [31:0] counter;  // counter for 100ms
+
 
   // wire define
   wire        uart_recv_done;  // receive done flag
-  wire [63:0] uart_recv_data;  /*synthesis syn_keep = 1*/  // receive data buff
-  wire        uart_send_en;  // send start flag
+
+  wire [63:0] uart_recv_data;  // receive data buff
+
+  reg         uart_send_en;  // send start flag
+
+
   wire [63:0] uart_send_data;  // send data buff
+
   wire        uart_tx_busy;  // when send is busy
 
   wire [31:0] data;
@@ -59,7 +69,21 @@ module top (
   wire decrypt;
   assign decrypt = 1'b0;
 
+  assign uart_send_data = desOut;
 
+
+  always @(posedge CLK100MHZ or negedge CPU_RESETN) begin
+    if (!CPU_RESETN) begin
+      counter <= 32'b0;
+      uart_send_en <= 1'b0;
+    end else if (counter < MAX_COUNTER - 1) begin
+      counter <= counter + 1'b1;
+      uart_send_en <= 1'b0;
+    end else begin
+      counter <= 32'b0;
+      uart_send_en <= 1'b1;
+    end
+  end
 
   led #(
       .CLK_FREQUENCY(CLK_FREQUENCY)
@@ -95,17 +119,17 @@ module top (
   );
 
   // uart receive module
-  uart_recv_b8 #(
-      .CLK_FREQ(CLK_FREQ),
-      .UART_BPS(UART_BPS)
-  ) uart_recv_b8_inst (
-      .sys_clk  (CLK100MHZ),
-      .sys_rst_n(CPU_RESETN),
+  //   uart_recv_b8 #(
+  //       .CLK_FREQ(CLK_FREQ),
+  //       .UART_BPS(UART_BPS)
+  //   ) uart_recv_b8_inst (
+  //       .sys_clk  (CLK100MHZ),
+  //       .sys_rst_n(CPU_RESETN),
 
-      .uart_rxd (UART_TXD_IN),
-      .uart_done(uart_recv_done),
-      .uart_data(uart_recv_data)
-  );
+  //       .uart_rxd (UART_TXD_IN),
+  //       .uart_done(uart_recv_done),
+  //       .uart_data(uart_recv_data)
+  //   );
 
   // uart send module
   uart_send_b8 #(
@@ -118,20 +142,20 @@ module top (
       .uart_en     (uart_send_en),
       .uart_din    (uart_send_data),
       .uart_tx_busy(uart_tx_busy),
-      .uart_txd    (UART_RXD_OUT)
+      .uart_txd    (JD[2])
   );
 
   // uart loop module
-  uart_loop uart_loop_inst (
-      .sys_clk  (CLK100MHZ),
-      .sys_rst_n(CPU_RESETN),
+  //   uart_loop uart_loop_inst (
+  //       .sys_clk  (CLK100MHZ),
+  //       .sys_rst_n(CPU_RESETN),
 
-      .recv_done(uart_recv_done),
-      .recv_data(uart_recv_data),
+  //       .recv_done(uart_recv_done),
+  //       .recv_data(uart_recv_data),
 
-      .tx_busy  (uart_tx_busy),
-      .send_en  (uart_send_en),
-      .send_data(uart_send_data)
-  );
+  //       .tx_busy  (uart_tx_busy),
+  //       .send_en  (uart_send_en),
+  //       .send_data(uart_send_data)
+  //   );
 
 endmodule  //top
