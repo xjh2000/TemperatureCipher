@@ -94,7 +94,6 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/crp.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/des.v
-  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/ds18b20_dri.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/key_sel.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/led.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/sbox1.v
@@ -105,8 +104,8 @@ read_verilog -library xil_defaultlib {
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/sbox6.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/sbox7.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/des/sbox8.v
-  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send.v
-  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_send_b8.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv.v
+  /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/uart_recv_b8.v
   /home/xjh/fpga/TemperatureCipher/TemperatureCipher.srcs/sources_1/new/top.v
 }
 OPTRACE "Adding files" END { }
