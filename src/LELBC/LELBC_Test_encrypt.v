@@ -25,9 +25,9 @@ module LELBC_Test_encrypt (
   end
 
   always @(posedge clk) begin
-    cnt <= ((cnt ^ 5'd16) > 0) ? cnt + 1 : 5'd0;
-    res <= (cnt > 0) ? t_res : in;
-    keyres <= ((cnt > 0) ? t_keyres : key);
+    cnt <= ((cnt ^ 5'd16) != 0) ? cnt + 1 : 5'd0;
+    res <= (cnt != 0) ? t_res : in;
+    keyres <= (cnt != 0) ? t_keyres : key;
   end
 
   LELBC_Test_RF ltr (
