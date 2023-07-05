@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Jul  5 09:44:38 2023
+| Date         : Wed Jul  5 11:29:48 2023
 | Host         : xjh-main-pc running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -20,10 +20,10 @@ Table of Contents
 1. REPORT SUMMARY
 -----------------
             Netlist: netlist
-          Floorplan: design_1
+          Floorplan: checkpoint_top
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 131
+             Violations found: 196
 +-----------+------------------+----------------------------------+------------+
 | Rule      | Severity         | Description                      | Violations |
 +-----------+------------------+----------------------------------+------------+
@@ -31,6 +31,8 @@ Table of Contents
 | DPIR-1    | Warning          | Asynchronous driver check        | 11         |
 | HPDR-1    | Warning          | Port pin direction inconsistency | 1          |
 | TIMING-18 | Warning          | Missing input or output delay    | 18         |
+| TIMING-20 | Warning          | Non-clocked latch                | 64         |
+| LATCH-1   | Advisory         | Existing latches in the design   | 1          |
 +-----------+------------------+----------------------------------+------------+
 
 2. REPORT DETAILS
@@ -688,6 +690,331 @@ Related violations: <none>
 TIMING-18#18 Warning
 Missing input or output delay  
 An output delay is missing on JD[2] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111048] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111048]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111049] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111049]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111050] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111050]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111051] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111051]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111052] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111052]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111053] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111053]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111054] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111054]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111055] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111055]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111056] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111056]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111057] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111057]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111058] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111058]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111059] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111059]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111060] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111060]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111061] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111061]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111062] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111062]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111063] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111063]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111064] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111064]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111065] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111065]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111066] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111066]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111067] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111067]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111068] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111068]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111069] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111069]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111070] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111070]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111071] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111071]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111072] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111072]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111073] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111073]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111074] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111074]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111075] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111075]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111076] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111076]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111077] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111077]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111078] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111078]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111079] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111079]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111080] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111080]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111081] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111081]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111082] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111082]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#36 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111083] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111083]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#37 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111084] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111084]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#38 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111085] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111085]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#39 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111086] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111086]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#40 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111087] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111087]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#41 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111088] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111088]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#42 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111089] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111089]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#43 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111090] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111090]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#44 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111091] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111091]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#45 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111092] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111092]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#46 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111093] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111093]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#47 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111094] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111094]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#48 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111095] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111095]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#49 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111096] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111096]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#50 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111097] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111097]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#51 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111098] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111098]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#52 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111099] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111099]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#53 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111100] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111100]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#54 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111101] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111101]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#55 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111102] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111102]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#56 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111103] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111103]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#57 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111104] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111104]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#58 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111105] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111105]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#59 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111106] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111106]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#60 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111107] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111107]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#61 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111108] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111108]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#62 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111109] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111109]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#63 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111110] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111110]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#64 Warning
+Non-clocked latch  
+The latch LELBC_Test_encrypt_inst/result[-1111111111] cannot be properly analyzed as its control pin LELBC_Test_encrypt_inst/result[-1111111111]/G is not reached by a timing clock
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 64 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
 Related violations: <none>
 
 

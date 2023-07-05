@@ -41,7 +41,7 @@ module top (
   // parameter define
   parameter CLK_FREQ = 100_000_000;  // sys clock frequency
   parameter UART_BPS = 115200;  // uart bound frequency
-  localparam MAX_COUNTER = CLK_FREQUENCY / 10;  // 100ms needs number of counter  
+  localparam MAX_COUNTER = CLK_FREQUENCY;  // 1000ms needs number of counter  
 
   reg  [31:0] counter;  // counter for 100ms
 
@@ -63,8 +63,9 @@ module top (
   assign en = 1'b1;
 
   wire [63:0] desOut;
+  reg [63:0] tempOut;
   wire [63:0] desIn;
-  wire [55:0] key = 56'hffff_ffff_ffff_ff;
+  wire [127:0] key = 128'hffff_ffff_ffff_ffff_ffff_ffff_ffff_ffff;
 
   wire decrypt;
   assign decrypt = 1'b0;
@@ -82,6 +83,7 @@ module top (
     end else begin
       counter <= 32'b0;
       uart_send_en <= 1'b1;
+      tempOut <= desOut;
     end
   end
 
@@ -90,7 +92,7 @@ module top (
   ) led_inst (
       .clk (CLK100MHZ),
       .en  (en),
-      .data(desOut[31:0]),
+      .data(tempOut[31:0]),
       .CA  (CA),
       .CB  (CB),
       .CC  (CC),
@@ -102,14 +104,20 @@ module top (
       .AN  (AN)
   );
 
-
-  des des_inst (
-      .desOut(desOut),
-      .desIn (desIn),
-      .key   (key),
-      .decrypt(decrypt),
-      .clk   (CLK100MHZ)
+  LELBC_Test_encrypt LELBC_Test_encrypt_inst (
+      .clk(CLK100MHZ),
+      .in(desIn),
+      .key(key),
+      .result(desOut)
   );
+
+  // des des_inst (
+  //     .desOut(desOut),
+  //     .desIn (desIn),
+  //     .key   (key),
+  //     .decrypt(decrypt),
+  //     .clk   (CLK100MHZ)
+  // );
 
   ds18b20_dri ds18b20_dri_inst (
       .clk      (CLK100MHZ),
