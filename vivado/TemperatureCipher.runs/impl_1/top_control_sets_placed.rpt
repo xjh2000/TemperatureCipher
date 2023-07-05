@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Jul  5 09:05:40 2023
+| Date         : Wed Jul  5 09:43:57 2023
 | Host         : xjh-main-pc running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -77,12 +77,12 @@ Table of Contents
 |  clk_1us             |                                                     |                               |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG |                                                     | led_inst/AN[3]_i_1_n_0        |                1 |              4 |         4.00 |
 |  CLK100MHZ_IBUF_BUFG |                                                     | led_inst/counter_AN_reg__0[3] |                2 |              4 |         2.00 |
-|  CLK100MHZ_IBUF_BUFG | uart_send_b8_inst/tx_cnt[2]_i_1_n_0                 | ds18b20_dri_inst/CPU_RESETN   |                1 |              4 |         4.00 |
 |  CLK100MHZ_IBUF_BUFG | led_inst/one_ms                                     |                               |                1 |              4 |         4.00 |
 |  CLK100MHZ_IBUF_BUFG | uart_send_b8_inst/uart_send_inst/tx_cnt[3]_i_1_n_0  | ds18b20_dri_inst/CPU_RESETN   |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG | uart_send_b8_inst/tx_cnt[2]_i_1_n_0                 | ds18b20_dri_inst/CPU_RESETN   |                1 |              4 |         4.00 |
 |  clk_1us             | ds18b20_dri_inst/cmd_cnt                            | ds18b20_dri_inst/CPU_RESETN   |                2 |              4 |         2.00 |
-|  clk_1us             | ds18b20_dri_inst/wr_data                            |                               |                1 |              4 |         4.00 |
 |  clk_1us             | ds18b20_dri_inst/wr_cnt                             | ds18b20_dri_inst/CPU_RESETN   |                1 |              4 |         4.00 |
+|  clk_1us             | ds18b20_dri_inst/wr_data                            |                               |                1 |              4 |         4.00 |
 |  clk_1us             | ds18b20_dri_inst/rd_cnt                             | ds18b20_dri_inst/CPU_RESETN   |                1 |              5 |         5.00 |
 |  CLK100MHZ_IBUF_BUFG | led_inst/__0/i__n_0                                 |                               |                1 |              7 |         7.00 |
 |  CLK100MHZ_IBUF_BUFG | uart_send_b8_inst/tx_cnt_reg[3]_inv_n_0             | ds18b20_dri_inst/CPU_RESETN   |                6 |              8 |         1.33 |

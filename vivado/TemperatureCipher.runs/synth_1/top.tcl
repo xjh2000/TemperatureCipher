@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -86,22 +87,22 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/xjh/fpga/TemperatureCipher/src/crp.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/des.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/ds18b20_dri.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/key_sel.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/led.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/sbox1.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/sbox2.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/sbox3.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/sbox4.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/sbox5.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/sbox6.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/sbox7.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/sbox8.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/uart_send.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/uart_send_b8.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/top.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/crp.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/des.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/ds18b20/ds18b20_dri.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/key_sel.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/led/led.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/sbox1.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/sbox2.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/sbox3.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/sbox4.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/sbox5.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/sbox6.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/sbox7.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/des/sbox8.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/uart/uart_send.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/uart/uart_send_b8.v
+  C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/sources_1/imports/src/top.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
