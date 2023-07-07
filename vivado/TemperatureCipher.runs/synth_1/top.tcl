@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -87,11 +86,12 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_RF_decrypt.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_decrypt.v
+  C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_RF.v
+  C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_encrypt.v
+  C:/Users/xjh/fpga/TemperatureCipher/src/ds18b20/ds18b20_dri.v
   C:/Users/xjh/fpga/TemperatureCipher/src/led/led.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv.v
-  C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv_b8.v
+  C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send.v
+  C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send_b8.v
   C:/Users/xjh/fpga/TemperatureCipher/src/top.v
 }
 OPTRACE "Adding files" END { }

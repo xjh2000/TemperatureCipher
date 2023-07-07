@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed Jul  5 15:28:23 2023
-# Process ID: 28216
+# Start of session at: Fri Jul  7 17:00:36 2023
+# Process ID: 31348
 # Current directory: C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.runs/synth_1/top.vds
@@ -12,6 +12,7 @@
 # Running On: xjh-main-pc, OS: Windows, CPU Frequency: 3494 MHz, CPU Physical cores: 14, Host memory: 68447 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
+create_project: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1496.980 ; gain = 190.527
 Command: read_checkpoint -auto_incremental -incremental C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/utils_1/imports/synth_1/top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -24,10 +25,10 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 18160
-INFO: [Synth 8-11241] undeclared symbol 'start_flag', assumed default net type 'wire' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv_b8.v:26]
+INFO: [Synth 8-7075] Helper process launched with PID 31700
+INFO: [Synth 8-11241] undeclared symbol 'send_end', assumed default net type 'wire' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send_b8.v:33]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 2336.617 ; gain = 409.742
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 2327.863 ; gain = 412.270
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:23]
 INFO: [Synth 8-6157] synthesizing module 'led' [C:/Users/xjh/fpga/TemperatureCipher/src/led/led.v:22]
@@ -35,145 +36,123 @@ INFO: [Synth 8-6157] synthesizing module 'led' [C:/Users/xjh/fpga/TemperatureCip
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/xjh/fpga/TemperatureCipher/src/led/led.v:68]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/xjh/fpga/TemperatureCipher/src/led/led.v:150]
 INFO: [Synth 8-6155] done synthesizing module 'led' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/led/led.v:22]
-INFO: [Synth 8-6157] synthesizing module 'LELBC_Test_decrypt' [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_decrypt.v:3]
-INFO: [Synth 8-6157] synthesizing module 'LELBC_Test_RF_decrypt' [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_RF_decrypt.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'LELBC_Test_RF_decrypt' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_RF_decrypt.v:3]
-WARNING: [Synth 8-689] width (32) of port connection 'cnt' does not match port width (5) of module 'LELBC_Test_RF_decrypt' [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_decrypt.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'LELBC_Test_decrypt' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_decrypt.v:3]
-INFO: [Synth 8-6157] synthesizing module 'uart_recv_b8' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv_b8.v:2]
+INFO: [Synth 8-6157] synthesizing module 'LELBC_Test_encrypt' [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_encrypt.v:1]
+INFO: [Synth 8-6157] synthesizing module 'LELBC_Test_RF' [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_RF.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'LELBC_Test_RF' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_RF.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'LELBC_Test_encrypt' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_encrypt.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ds18b20_dri' [C:/Users/xjh/fpga/TemperatureCipher/src/ds18b20/ds18b20_dri.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ds18b20_dri' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/ds18b20/ds18b20_dri.v:1]
+WARNING: [Synth 8-7071] port 'sign' of module 'ds18b20_dri' is unconnected for instance 'ds18b20_dri_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:117]
+WARNING: [Synth 8-7023] instance 'ds18b20_dri_inst' of module 'ds18b20_dri' has 5 connections declared, but only 4 given [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:117]
+INFO: [Synth 8-6157] synthesizing module 'uart_send_b8' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send_b8.v:1]
 	Parameter CLK_FREQ bound to: 100000000 - type: integer 
 	Parameter UART_BPS bound to: 115200 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'uart_recv' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'uart_send' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send.v:1]
 	Parameter CLK_FREQ bound to: 100000000 - type: integer 
 	Parameter UART_BPS bound to: 115200 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'uart_recv' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv.v:1]
-WARNING: [Synth 8-7071] port 'rx_flag' of module 'uart_recv' is unconnected for instance 'uart_recv_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv_b8.v:94]
-WARNING: [Synth 8-7071] port 'rx_cnt' of module 'uart_recv' is unconnected for instance 'uart_recv_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv_b8.v:94]
-WARNING: [Synth 8-7071] port 'rxdata' of module 'uart_recv' is unconnected for instance 'uart_recv_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv_b8.v:94]
-WARNING: [Synth 8-7023] instance 'uart_recv_inst' of module 'uart_recv' has 8 connections declared, but only 5 given [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv_b8.v:94]
-INFO: [Synth 8-6155] done synthesizing module 'uart_recv_b8' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_recv_b8.v:2]
-WARNING: [Synth 8-7071] port 'rx_flag' of module 'uart_recv_b8' is unconnected for instance 'uart_recv_b8_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:135]
-WARNING: [Synth 8-7071] port 'rx_cnt' of module 'uart_recv_b8' is unconnected for instance 'uart_recv_b8_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:135]
-WARNING: [Synth 8-7071] port 'rxdata' of module 'uart_recv_b8' is unconnected for instance 'uart_recv_b8_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:135]
-WARNING: [Synth 8-7023] instance 'uart_recv_b8_inst' of module 'uart_recv_b8' has 8 connections declared, but only 5 given [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:135]
+INFO: [Synth 8-6155] done synthesizing module 'uart_send' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send.v:1]
+WARNING: [Synth 8-7071] port 'en_flag' of module 'uart_send' is unconnected for instance 'uart_send_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send_b8.v:115]
+WARNING: [Synth 8-7071] port 'tx_flag' of module 'uart_send' is unconnected for instance 'uart_send_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send_b8.v:115]
+WARNING: [Synth 8-7071] port 'tx_data' of module 'uart_send' is unconnected for instance 'uart_send_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send_b8.v:115]
+WARNING: [Synth 8-7071] port 'tx_cnt' of module 'uart_send' is unconnected for instance 'uart_send_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send_b8.v:115]
+WARNING: [Synth 8-7023] instance 'uart_send_inst' of module 'uart_send' has 10 connections declared, but only 6 given [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send_b8.v:115]
+INFO: [Synth 8-6155] done synthesizing module 'uart_send_b8' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/uart/uart_send_b8.v:1]
+WARNING: [Synth 8-7071] port 'en_flag' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:142]
+WARNING: [Synth 8-7071] port 'tx_flag' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:142]
+WARNING: [Synth 8-7071] port 'tx_data' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:142]
+WARNING: [Synth 8-7071] port 'tx_cnt' of module 'uart_send_b8' is unconnected for instance 'uart_send_b8_inst' [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:142]
+WARNING: [Synth 8-7023] instance 'uart_send_b8_inst' of module 'uart_send_b8' has 10 connections declared, but only 6 given [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:142]
 INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:23]
-WARNING: [Synth 8-6014] Unused sequential element uart_send_en_reg was removed.  [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:81]
-WARNING: [Synth 8-7137] Register tempOut_reg in module top has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:88]
+WARNING: [Synth 8-7137] Register wr_data_reg in module ds18b20_dri has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/xjh/fpga/TemperatureCipher/src/ds18b20/ds18b20_dri.v:202]
+WARNING: [Synth 8-7137] Register bit_width_reg in module ds18b20_dri has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/xjh/fpga/TemperatureCipher/src/ds18b20/ds18b20_dri.v:253]
+WARNING: [Synth 8-7137] Register org_data_reg in module ds18b20_dri has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/xjh/fpga/TemperatureCipher/src/ds18b20/ds18b20_dri.v:285]
 WARNING: [Synth 8-3848] Net UART_RXD_OUT in module/entity top does not have driver. [C:/Users/xjh/fpga/TemperatureCipher/src/top.v:30]
-WARNING: [Synth 8-7129] Port key[64] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[65] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[66] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[67] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[68] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[69] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[70] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[71] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[72] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[73] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[74] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[75] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[76] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[77] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[78] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[79] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[80] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[81] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[82] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[83] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[84] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[85] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[86] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[87] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[88] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[89] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[90] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[91] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[92] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[93] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[94] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[95] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[96] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[97] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[98] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[99] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[100] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[101] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[102] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[103] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[104] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[105] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[106] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[107] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[108] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[109] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[110] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[111] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[112] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[113] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[114] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[115] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[116] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[117] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[118] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[119] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[120] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[121] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[122] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[123] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[124] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[125] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[126] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[127] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cnt[0] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cnt[1] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cnt[2] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cnt[3] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cnt[4] in module LELBC_Test_RF_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[0] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[1] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[2] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[3] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[4] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[5] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[6] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[7] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[8] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[9] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[10] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[11] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[12] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[13] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[14] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[15] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[16] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[17] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[18] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[19] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[20] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[21] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[22] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[23] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[24] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[25] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[26] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[27] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[28] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[29] in module LELBC_Test_decrypt is either unconnected or has no load
-WARNING: [Synth 8-7129] Port key[30] in module LELBC_Test_decrypt is either unconnected or has no load
-INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port key[64] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[65] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[66] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[67] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[68] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[69] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[70] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[71] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[72] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[73] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[74] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[75] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[76] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[77] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[78] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[79] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[80] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[81] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[82] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[83] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[84] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[85] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[86] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[87] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[88] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[89] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[90] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[91] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[92] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[93] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[94] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[95] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[96] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[97] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[98] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[99] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[100] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[101] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[102] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[103] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[104] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[105] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[106] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[107] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[108] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[109] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[110] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[111] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[112] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[113] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[114] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[115] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[116] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[117] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[118] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[119] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[120] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[121] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[122] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[123] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[124] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[125] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[126] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[127] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cnt[0] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cnt[1] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cnt[2] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cnt[3] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UART_RXD_OUT in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port JD[1] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port JB[2] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port JB[1] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UART_TXD_IN in module top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 2431.102 ; gain = 504.227
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2424.230 ; gain = 508.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 2448.992 ; gain = 522.117
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2442.160 ; gain = 526.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 2448.992 ; gain = 522.117
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2442.160 ; gain = 526.566
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2448.992 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2442.160 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -184,67 +163,80 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2561.695 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2554.867 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2561.695 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2554.867 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 2554.867 ; gain = 639.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 2554.867 ; gain = 639.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 2554.867 ; gain = 639.273
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'result' [C:/Users/xjh/fpga/TemperatureCipher/src/LELBC/LELBC_Test_decrypt.v:62]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 2554.867 ; gain = 639.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   27 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 1     
 	   2 Input   10 Bit       Adders := 1     
 	   2 Input    6 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 5     
 +---XORs : 
-	   2 Input     32 Bit         XORs := 5     
+	   2 Input     32 Bit         XORs := 64    
 +---Registers : 
-	              128 Bit    Registers := 1     
-	               64 Bit    Registers := 4     
 	               32 Bit    Registers := 1     
-	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 3     
-	                6 Bit    Registers := 1     
-	                5 Bit    Registers := 1     
-	                4 Bit    Registers := 3     
-	                1 Bit    Registers := 16    
+	               20 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 24    
 +---Muxes : 
-	   2 Input  128 Bit        Muxes := 1     
-	   2 Input   64 Bit        Muxes := 2     
-	   8 Input   64 Bit        Muxes := 1     
-	   2 Input   27 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 3     
-	  17 Input    4 Bit        Muxes := 16    
-	   2 Input    4 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 14    
+	   7 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	  17 Input    4 Bit        Muxes := 256   
+	   2 Input    4 Bit        Muxes := 4     
+	   7 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 9     
+	   6 Input    3 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 3     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 40    
 	  18 Input    1 Bit        Muxes := 8     
-	   3 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 13    
+	   4 Input    1 Bit        Muxes := 14    
+	   6 Input    1 Bit        Muxes := 6     
+	   8 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 2     
+	  12 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -261,58 +253,72 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111048]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111049]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111050]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111051]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111052]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111053]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111054]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111055]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111056]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111057]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111058]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111059]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111060]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111061]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111062]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111063]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111064]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111065]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111066]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111067]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111068]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111069]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111070]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111071]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111072]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111073]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111074]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111075]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111076]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111077]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111078]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (LELBC_Test_decrypt_inst/result[-1111111079]) is unused and will be removed from module top.
+DSP Report: Generating DSP ds18b20_dri_inst/data20, operation Mode is: A*(B:0x271).
+DSP Report: operator ds18b20_dri_inst/data20 is absorbed into DSP ds18b20_dri_inst/data20.
+WARNING: [Synth 8-3917] design top has port DP driven by constant 1
+WARNING: [Synth 8-7129] Port key[64] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[65] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[66] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[67] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[68] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[69] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[70] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[71] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[72] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[73] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[74] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[75] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[76] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[77] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[78] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[79] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[80] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[81] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[82] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[83] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[84] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[85] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[86] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[87] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[88] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[89] in module LELBC_Test_RF is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[90] in module LELBC_Test_RF is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 2554.867 ; gain = 639.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ds18b20_dri | A*(B:0x271) | 11     | 10     | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:19 . Memory (MB): peak = 2554.867 ; gain = 639.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:20 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Timing Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:19 . Memory (MB): peak = 2554.867 ; gain = 639.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:21 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Technology Mapping : Time (s): cpu = 00:00:04 ; elapsed = 00:00:20 . Memory (MB): peak = 2555.852 ; gain = 640.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -330,41 +336,49 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished IO Insertion : Time (s): cpu = 00:00:05 ; elapsed = 00:00:22 . Memory (MB): peak = 2570.676 ; gain = 655.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:05 ; elapsed = 00:00:22 . Memory (MB): peak = 2570.676 ; gain = 655.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:05 ; elapsed = 00:00:22 . Memory (MB): peak = 2570.676 ; gain = 655.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:05 ; elapsed = 00:00:22 . Memory (MB): peak = 2570.676 ; gain = 655.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:23 . Memory (MB): peak = 2570.676 ; gain = 655.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:26 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:05 ; elapsed = 00:00:23 . Memory (MB): peak = 2570.676 ; gain = 655.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ds18b20_dri | A*B         | 11     | 10     | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
 
 Report BlackBoxes: 
 +-+--------------+----------+
@@ -373,48 +387,49 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    12|
-|3     |LUT1   |     6|
-|4     |LUT2   |    46|
-|5     |LUT3   |    39|
-|6     |LUT4   |    71|
-|7     |LUT5   |    81|
-|8     |LUT6   |    86|
-|9     |MUXF7  |     4|
-|10    |FDCE   |   196|
-|11    |FDRE   |   156|
-|12    |FDSE   |    12|
-|13    |LD     |    32|
-|14    |IBUF   |     3|
-|15    |OBUF   |    16|
-|16    |OBUFT  |     1|
-+------+-------+------+
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     2|
+|2     |CARRY4  |    52|
+|3     |DSP48E1 |     1|
+|4     |LUT1    |    12|
+|5     |LUT2    |   206|
+|6     |LUT3    |   149|
+|7     |LUT4    |   541|
+|8     |LUT5    |   581|
+|9     |LUT6    |   649|
+|10    |FDCE    |   155|
+|11    |FDPE    |     5|
+|12    |FDRE    |    51|
+|13    |FDSE    |     8|
+|14    |IBUF    |     2|
+|15    |IOBUF   |     1|
+|16    |OBUF    |    17|
+|17    |OBUFT   |     1|
++------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:26 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:05 ; elapsed = 00:00:23 . Memory (MB): peak = 2570.676 ; gain = 655.082
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 168 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 2561.695 ; gain = 522.117
-Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:26 . Memory (MB): peak = 2561.695 ; gain = 634.820
+Synthesis finished with 0 errors, 0 critical warnings and 75 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:21 . Memory (MB): peak = 2570.676 ; gain = 542.375
+Synthesis Optimization Complete : Time (s): cpu = 00:00:05 ; elapsed = 00:00:23 . Memory (MB): peak = 2570.676 ; gain = 655.082
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2561.695 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 48 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2582.727 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 54 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2561.695 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2587.402 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 32 instances were transformed.
-  LD => LDCE: 32 instances
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
 
-Synth Design complete | Checksum: 9ea3ed58
+Synth Design complete | Checksum: 957b2e5d
 INFO: [Common 17-83] Releasing license: Synthesis
-37 Infos, 146 Warnings, 0 Critical Warnings and 0 Errors encountered.
+39 Infos, 118 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:29 . Memory (MB): peak = 2561.695 ; gain = 1032.090
+synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:31 . Memory (MB): peak = 2587.402 ; gain = 1065.574
 INFO: [Common 17-1381] The checkpoint 'C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jul  5 15:29:02 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Jul  7 17:01:16 2023...
