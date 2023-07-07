@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Jul  5 15:30:06 2023
+| Date         : Fri Jul  7 17:18:44 2023
 | Host         : xjh-main-pc running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,17 +23,36 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 51
-+-----------+----------+--------------------------------+------------+
-| Rule      | Severity | Description                    | Violations |
-+-----------+----------+--------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay  | 18         |
-| TIMING-20 | Warning  | Non-clocked latch              | 32         |
-| LATCH-1   | Advisory | Existing latches in the design | 1          |
-+-----------+----------+--------------------------------+------------+
+             Violations found: 22
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| TIMING-16 | Warning  | Large setup violation         | 4          |
+| TIMING-18 | Warning  | Missing input or output delay | 18         |
++-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -22.503 ns between uart_recv_b8_inst/uart_data_reg[20]/C (clocked by sys_clk_pin) and led_inst/number_display_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -22.568 ns between uart_recv_b8_inst/uart_data_reg[20]/C (clocked by sys_clk_pin) and led_inst/number_display_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -22.721 ns between uart_recv_b8_inst/uart_data_reg[20]/C (clocked by sys_clk_pin) and led_inst/number_display_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -22.763 ns between uart_recv_b8_inst/uart_data_reg[20]/C (clocked by sys_clk_pin) and led_inst/number_display_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on CPU_RESETN relative to the rising and/or falling clock edge(s) of sys_clk_pin.
@@ -122,171 +141,6 @@ Related violations: <none>
 TIMING-18#18 Warning
 Missing input or output delay  
 An output delay is missing on CG relative to the rising and/or falling clock edge(s) of sys_clk_pin.
-Related violations: <none>
-
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111080] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111080]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#2 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111081] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111081]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#3 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111082] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111082]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#4 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111083] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111083]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#5 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111084] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111084]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#6 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111085] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111085]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#7 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111086] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111086]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#8 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111087] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111087]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#9 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111088] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111088]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#10 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111089] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111089]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#11 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111090] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111090]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#12 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111091] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111091]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#13 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111092] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111092]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#14 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111093] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111093]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#15 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111094] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111094]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#16 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111095] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111095]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#17 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111096] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111096]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#18 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111097] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111097]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#19 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111098] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111098]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#20 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111099] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111099]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#21 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111100] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111100]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#22 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111101] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111101]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#23 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111102] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111102]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#24 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111103] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111103]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#25 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111104] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111104]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#26 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111105] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111105]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#27 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111106] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111106]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#28 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111107] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111107]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#29 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111108] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111108]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#30 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111109] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111109]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#31 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111110] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111110]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#32 Warning
-Non-clocked latch  
-The latch LELBC_Test_decrypt_inst/result[-1111111111] cannot be properly analyzed as its control pin LELBC_Test_decrypt_inst/result[-1111111111]/G is not reached by a timing clock
-Related violations: <none>
-
-LATCH-1#1 Advisory
-Existing latches in the design  
-There are 32 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
 Related violations: <none>
 
 

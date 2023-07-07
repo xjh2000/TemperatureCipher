@@ -42,7 +42,7 @@ module top (
   // parameter define
   parameter CLK_FREQ = 100_000_000;  // sys clock frequency
   parameter UART_BPS = 115200;  // uart bound frequency
-  localparam MAX_COUNTER = CLK_FREQUENCY;  // 1000ms needs number of counter  
+  localparam MAX_COUNTER = CLK_FREQUENCY / 100;  // 100ms needs number of counter  
 
   reg  [31:0] counter;  // counter for 100ms
 
@@ -85,7 +85,6 @@ module top (
     end else begin
       counter <= 32'b0;
       uart_send_en <= 1'b1;
-      tempOut <= plaintext;
     end
   end
 
@@ -94,7 +93,7 @@ module top (
   ) led_inst (
       .clk (CLK100MHZ),
       .en  (en),
-      .data(tempOut[31:0]),
+      .data(plaintext[31:0]),
       .CA  (CA),
       .CB  (CB),
       .CC  (CC),
@@ -107,9 +106,7 @@ module top (
   );
 
   LELBC_Test_decrypt LELBC_Test_decrypt_inst (
-      .clk(CLK100MHZ),
       .in(ciphertext),
-      .key(key),
       .result(plaintext)
   );
 
