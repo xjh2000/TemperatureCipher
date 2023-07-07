@@ -1,25 +1,16 @@
-
-
 module LELBC_Test_decrypt (
-    clk,
     in,
-    key,
     result
 );
-  input clk;
   input [0:63] in;
-  input [0:127] key;
-  output [0:63] result;
-  
-  reg ready;
-  reg [0:4] cnt;
 
-  reg [0:63] res;
-  reg [0:127] keyres;
-  wire [0:63] t_res, result;
+  output [0:63] result;
+
   wire [0:127]keyres1,keyres2,keyres3,keyres4,keyres5,keyres6,keyres7,keyres8,keyres9,keyres10,keyres11,keyres12,keyres13,keyres14,keyres15,keyres16;
 
-  assign keyres1=128'h5BFB_9B3B_DB7B_1BBB_C595_E5B5_85D5_A5F5;//0000_0000_0000_0000_0000_0000_0000_0000_0000_0000;//FFFF_FFFF_FFFF_FFFF_FFFF;//0123_4567_89AB_CDEF_00FF;//0000_0000_0000_0000_0000;
+  wire [0:63] x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, temp;
+
+  assign keyres1 = 128'h5BFB_9B3B_DB7B_1BBB_C595_E5B5_85D5_A5F5;
   assign keyres2 = 128'h4BEB_8B2B_CB6B_0BAB_DDAD_FDCD_9DED_BDFF;
   assign keyres3 = 128'h7BFF_BB5B_FB9B_3BDB_D5A5_F5C5_95E5_B5FF;
   assign keyres4 = 128'h6BFF_AB4B_EB8B_2BCB_EDBD_FFDD_ADFD_CDFF;
@@ -36,28 +27,104 @@ module LELBC_Test_decrypt (
   assign keyres15 = 128'hFFFF_FFFF_FFFF_FBFF_FFFF_FFFF_F5FF_FFFF;
   assign keyres16 = 128'hFFFF_FFFF_FFFF_EBFF_FFFF_FFFF_FFFF_FFFF;
 
-  wire [0:63] in1;
-  assign in1 = {in[32:63], in[0:31]};
-
-  initial begin
-    ready = 1;
-    cnt <= 5'h00;
-    //i   <=8'hff;
-  end
-
-  always @(posedge clk) begin
-    cnt <= ((cnt ^ 5'd16) != 0) ? cnt + 1 : 5'd0;
-    res <= (cnt != 0) ? t_res : in1;
-    //keyres <=(ready)?((cnt)?t_keyres:key):keyres;
-    keyres <= (cnt==0)?keyres1:((cnt==1)?keyres2:((cnt==2)?keyres3:((cnt==3)?keyres4:((cnt==4)?keyres5:((cnt==5)?keyres6:((cnt==6)?keyres7:((cnt==7)?keyres8:((cnt==8)?keyres9:((cnt==9)?keyres10:((cnt==10)?keyres11:((cnt==11)?keyres12:((cnt==12)?keyres13:((cnt==13)?keyres14:((cnt==14)?keyres15:keyres16))))))))))))));
-  end
-
+  //LELBC_Test_decrypt ltd(clock,in,key,result);//GT_encrypt(clk,in,key,tweak,result);
+  assign x15 = {in[32:63], in[0:31]};
   LELBC_Test_RF_decrypt ltr1 (
-      res,
-      keyres,
-      (16 - cnt),
-      t_res
-  );  //GFT_Round(in,key,tweak,i,res,keyres,tweakres);
+      x15,
+      keyres1,
+      4'b1111,
+      x14
+  );
+  LELBC_Test_RF_decrypt ltr2 (
+      x14,
+      keyres2,
+      4'b1110,
+      x13
+  );
+  LELBC_Test_RF_decrypt ltr3 (
+      x13,
+      keyres3,
+      4'b1101,
+      x12
+  );
+  LELBC_Test_RF_decrypt ltr4 (
+      x12,
+      keyres4,
+      4'b1100,
+      x11
+  );
+  LELBC_Test_RF_decrypt ltr5 (
+      x11,
+      keyres5,
+      4'b1011,
+      x10
+  );
+  LELBC_Test_RF_decrypt ltr6 (
+      x10,
+      keyres6,
+      4'b1010,
+      x9
+  );
+  LELBC_Test_RF_decrypt ltr7 (
+      x9,
+      keyres7,
+      4'b1001,
+      x8
+  );
+  LELBC_Test_RF_decrypt ltr8 (
+      x8,
+      keyres8,
+      4'b1000,
+      x7
+  );
+  LELBC_Test_RF_decrypt ltr9 (
+      x7,
+      keyres9,
+      4'b0111,
+      x6
+  );
+  LELBC_Test_RF_decrypt ltr10 (
+      x6,
+      keyres10,
+      4'b0110,
+      x5
+  );
+  LELBC_Test_RF_decrypt ltr11 (
+      x5,
+      keyres11,
+      4'b0101,
+      x4
+  );
+  LELBC_Test_RF_decrypt ltr12 (
+      x4,
+      keyres12,
+      4'b0100,
+      x3
+  );
+  LELBC_Test_RF_decrypt ltr13 (
+      x3,
+      keyres13,
+      4'b0011,
+      x2
+  );
+  LELBC_Test_RF_decrypt ltr14 (
+      x2,
+      keyres14,
+      4'b0010,
+      x1
+  );
+  LELBC_Test_RF_decrypt ltr15 (
+      x1,
+      keyres15,
+      4'b0001,
+      x0
+  );
+  LELBC_Test_RF_decrypt ltr16 (
+      x0,
+      keyres16,
+      4'b0000,
+      temp
+  );
 
-  assign result = (cnt ^ 5'd16) == 0 ? {res[32:63], res[0:31]} : result;
+  assign result = {temp[32:63], temp[0:31]};
 endmodule

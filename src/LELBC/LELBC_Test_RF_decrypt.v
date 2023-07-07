@@ -1,5 +1,3 @@
-
-
 module LELBC_Test_RF_decrypt(in,key,cnt,result);
 	input [0:63]in;
 	input [0:127]key;

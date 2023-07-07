@@ -1,11 +1,9 @@
-
-
-module LELBC_Test_RF(in,key,cnt,result,key_result);
+module LELBC_Test_RF(in,key,cnt,result);
 	input [0:63]in;
 	input [0:127]key;
-	input [0:4]cnt;
+	input [0:3]cnt;
 	output [0:63]result;
-	output [0:127]key_result;
+	//output [0:127]key_result;
 
 	reg [0:3] sbox[0:15];
    	initial  begin
@@ -15,12 +13,12 @@ module LELBC_Test_RF(in,key,cnt,result,key_result);
      	  sbox[12]=4'h0; sbox[13]=4'hD; sbox[14]=4'h1; sbox[15]=4'h5; 
    	end
     	
-	LELBC_Test_UpdateKey ltu(cnt,key,key_result);
+	//LELBC_Test_UpdateKey ltu(cnt,key,key_result);
 
 	wire [0:63]in1;
 	//wire [0:63]in1,in2,in3;
 	//1
-	assign in1[0:31]=in[0:31]^key_result[0:31];
+	assign in1[0:31]=in[0:31]^key[0:31];
 	//2
 	wire [0:31]temp1;
 	assign temp1={in1[5:31],in1[0:4]};
@@ -34,7 +32,7 @@ module LELBC_Test_RF(in,key,cnt,result,key_result);
 	assign temp2={in2[37:63],in2[32:36]};
 	assign in3[0:31]=temp2[0:31]^in2[0:31];
 	//5
-	assign in3[32:63]=in2[32:63]^key_result[32:63];
+	assign in3[32:63]=in2[32:63]^key[32:63];
 	assign result=in3;
 
 endmodule
