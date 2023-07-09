@@ -30,7 +30,7 @@ module led (
     output reg CE,
     output reg CF,
     output reg CG,
-    output DP,
+    output reg DP,
     output reg [7:0] AN
 );
   parameter CLK_FREQUENCY = 100_000_000;
@@ -41,8 +41,8 @@ module led (
   reg [ 7:0] counter_AN;  // counter for AN enable , counter 0-15 for 8 AN
   reg [ 5:0] number_display;  // display number
 
-  assign DP = 1'b1;
-  
+  // assign DP = 1'b1;
+
   // use counter to creat 1ms delay signl
   always @(posedge clk) begin
     if (counter < MAX_COUNTER - 1) begin
@@ -69,6 +69,7 @@ module led (
         // 0 index
         8'd0: begin
           AN <= 8'b01111111;
+          DP <= 1'b1;
           number_display <= {1'b0, data[31:28]};
         end
         8'd1: begin
@@ -78,6 +79,7 @@ module led (
         // 1 index
         8'd2: begin
           AN <= 8'b10111111;
+          DP <= 1'b1;
           number_display <= {1'b0, data[27:24]};
         end
         8'd3: begin
@@ -87,6 +89,7 @@ module led (
         // 2 index
         8'd4: begin
           AN <= 8'b11011111;
+          DP <= 1'b1;
           number_display <= {1'b0, data[23:20]};
         end
         8'd5: begin
@@ -114,6 +117,7 @@ module led (
         // 5 index
         8'd10: begin
           AN <= 8'b11111011;
+          DP <= 1'b0;
           number_display <= {1'b0, data[11:8]};
         end
         8'd11: begin
@@ -123,6 +127,7 @@ module led (
         // 6 index
         8'd12: begin
           AN <= 8'b11111101;
+          DP <= 1'b1;
           number_display <= {1'b0, data[7:4]};
         end
         8'd13: begin

@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.runs/impl_1/top.tcl"
+  variable script "C:/Users/xjh/Documents/GitHub/TemperatureCipher/vivado/TemperatureCipher.runs/impl_1/top.tcl"
   variable category "vivado_impl"
 }
 
@@ -126,7 +126,7 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 5
-  set_param synth.incrementalSynthesisCache C:/Users/xjh/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-23808-xjh-main-pc/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/xjh/Documents/GitHub/TemperatureCipher/vivado/.Xil/Vivado-11124-xjh-main-pc/incrSyn
   set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 20  }
 OPTRACE "create in-memory project" START { }
@@ -136,15 +136,15 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.cache/wt [current_project]
-  set_property parent.project_path C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.xpr [current_project]
-  set_property ip_output_repo C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/xjh/Documents/GitHub/TemperatureCipher/vivado/TemperatureCipher.cache/wt [current_project]
+  set_property parent.project_path C:/Users/xjh/Documents/GitHub/TemperatureCipher/vivado/TemperatureCipher.xpr [current_project]
+  set_property ip_output_repo C:/Users/xjh/Documents/GitHub/TemperatureCipher/vivado/TemperatureCipher.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.runs/synth_1/top.dcp
+  add_files -quiet C:/Users/xjh/Documents/GitHub/TemperatureCipher/vivado/TemperatureCipher.runs/synth_1/top.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc
+  read_xdc C:/Users/xjh/Documents/GitHub/TemperatureCipher/vivado/TemperatureCipher.srcs/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

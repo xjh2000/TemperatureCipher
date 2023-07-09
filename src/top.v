@@ -59,7 +59,7 @@ module top (
 
   wire        uart_tx_busy;  // when send is busy
 
-  wire [31:0] data;
+  wire [31:0] data = 32'h0000_2456;
   wire        en;
   assign en = 1'b1;
 
@@ -93,7 +93,7 @@ module top (
   ) led_inst (
       .clk (CLK100MHZ),
       .en  (en),
-      .data(plaintext[31:0]),
+      .data(data[31:0]),
       .CA  (CA),
       .CB  (CB),
       .CC  (CC),
@@ -105,10 +105,10 @@ module top (
       .AN  (AN)
   );
 
-  LELBC_Test_decrypt LELBC_Test_decrypt_inst (
-      .in(ciphertext),
-      .result(plaintext)
-  );
+  // LELBC_Test_decrypt LELBC_Test_decrypt_inst (
+  //     .in(ciphertext),
+  //     .result(plaintext)
+  // );
 
   // des des_inst (
   //     .ciphertext(ciphertext),
@@ -126,17 +126,17 @@ module top (
   // );
 
   // uart receive module
-  uart_recv_b8 #(
-      .CLK_FREQ(CLK_FREQ),
-      .UART_BPS(UART_BPS)
-  ) uart_recv_b8_inst (
-      .sys_clk  (CLK100MHZ),
-      .sys_rst_n(CPU_RESETN),
+  // uart_recv_b8 #(
+  //     .CLK_FREQ(CLK_FREQ),
+  //     .UART_BPS(UART_BPS)
+  // ) uart_recv_b8_inst (
+  //     .sys_clk  (CLK100MHZ),
+  //     .sys_rst_n(CPU_RESETN),
 
-      .uart_rxd (JB[1]),
-      .uart_done(uart_recv_done),
-      .uart_data(uart_recv_data)
-  );
+  //     .uart_rxd (JB[1]),
+  //     .uart_done(uart_recv_done),
+  //     .uart_data(uart_recv_data)
+  // );
 
   // uart send module
   // uart_send_b8 #(

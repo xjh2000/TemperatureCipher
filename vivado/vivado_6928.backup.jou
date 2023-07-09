@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Tue Jul  4 10:09:01 2023
+# Process ID: 6928
+# Current directory: C:/Users/xjh/fpga/TemperatureCipher/vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2892 C:\Users\xjh\fpga\TemperatureCipher\vivado\TemperatureCipher.xpr
+# Log file: C:/Users/xjh/fpga/TemperatureCipher/vivado/vivado.log
+# Journal file: C:/Users/xjh/fpga/TemperatureCipher/vivado\vivado.jou
+# Running On: xjh-main-pc, OS: Windows, CPU Frequency: 3494 MHz, CPU Physical cores: 14, Host memory: 68447 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.xpr
+update_compile_order -fileset sources_1
+update_files -from_files C:/Users/xjh/tools/digilent-xdc-master/Nexys-A7-100T-Master.xdc -to_files C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc -filesets [get_filesets *]
+export_ip_user_files -of_objects  [get_files C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc
+add_files -fileset constrs_1 -norecurse C:/Users/xjh/tools/digilent-xdc-master/Nexys-A7-100T-Master.xdc
+import_files -fileset constrs_1 C:/Users/xjh/tools/digilent-xdc-master/Nexys-A7-100T-Master.xdc
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+set_property STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE true [get_runs impl_1]
+synth_design -top top -part xc7a100tcsg324-1 -lint 
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+export_ip_user_files -of_objects  [get_files C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc
+add_files -fileset constrs_1 -norecurse C:/Users/xjh/fpga/TemperatureCipher/vivado/TemperatureCipher.srcs/constrs_1/imports/digilent-xdc-master/Nexys-A7-100T-Master.xdc
+reset_run synth_1
+launch_runs synth_1 -jobs 20
+wait_on_run synth_1
+launch_runs impl_1 -jobs 20
+wait_on_run impl_1
