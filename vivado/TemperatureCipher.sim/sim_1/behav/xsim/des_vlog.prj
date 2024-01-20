@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../src/des/crp.v" \
+"../../../../../src/des/key_sel.v" \
+"../../../../../src/des/sbox1.v" \
+"../../../../../src/des/sbox2.v" \
+"../../../../../src/des/sbox3.v" \
+"../../../../../src/des/sbox4.v" \
+"../../../../../src/des/sbox5.v" \
+"../../../../../src/des/sbox6.v" \
+"../../../../../src/des/sbox7.v" \
+"../../../../../src/des/sbox8.v" \
+"../../../../../src/des/des.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
